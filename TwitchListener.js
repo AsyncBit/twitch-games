@@ -1,77 +1,44 @@
-let channel = "";
-let token = "";
-
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-
-if (urlParams.has("token")) {
-  token = urlParams.get("token");
-} else {
-  token = "";
-}
-
-if (urlParams.has("channel")) {
-  channel = urlParams.get("channel");
-} else {
-  channel = "";
-}
-
-if (token) {
-  ComfyJS.Init(channel, token);
-  console.log("Channel Send");
-} else {
-  ComfyJS.Init(channel);
-  console.log("No Send");
-}
+let currentGame = null;
 
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
+  // WTP
   if (
     (flags.broadcaster && command === "wtp") ||
     (flags.mod && command === "wtp")
   ) {
-    startGame();
+    playGame(WTP, startWtp, null);
   }
   if (
     (flags.broadcaster && command === "resetwtp") ||
     (flags.mod && command === "resetwtp")
   ) {
-    winReset();
+    resetGame(WTP, resetWtp);
   }
   if (
     (flags.broadcaster && command === "skipwtp") ||
     (flags.mod && command === "skipwtp")
   ) {
-    skip();
+    skipGame(WTP, skipWtp);
+  }
+
+  // TBBT
+  if (
+    (flags.broadcaster && command === "tbbt") ||
+    (flags.mod && command === "tbbt")
+  ) {
+    playGame(TBBT, playTbbt, null);
   }
   if (
-    (flags.broadcaster && command === "giveup") ||
-    (flags.mod && command === "giveup")
+    (flags.broadcaster && command === "resettbbt") ||
+    (flags.mod && command === "resettbbt")
   ) {
-    giveUp();
-  }
-  if (
-    (flags.broadcaster && command === "stopwtp") ||
-    (flags.mod && command === "stopwtp")
-  ) {
-    stopGame();
-  }
-  if (
-    (flags.broadcaster && command === "stopwtpauto") ||
-    (flags.mod && command === "stopwtpauto")
-  ) {
-    stopAuto();
-  }
-  if (
-    (flags.broadcaster && command === "startwtpauto") ||
-    (flags.mod && command === "startwtpauto")
-  ) {
-    startAuto();
+    resetGame(TBBT, resetTbbt);
   }
 };
 
 ComfyJS.onChat = (user, message, flags, self, extra) => {
   console.log(message);
-  if (!isSolved) {
+  if (!isWtpSolved && currentGame == WTP) {
     message = message.replace("?", "");
     message = message.replace("@", "");
     message = message.split(" ");
@@ -91,5 +58,14 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
         guess(message[0].toLowerCase(), user);
       }
     }
+  }
+
+  // TBBT
+  if (!isTbbtSolved && currentGame == TBBT) {
+    message = message.replace("?", "");
+    message = message.replace("@", "");
+    message = message.split(" ");
+
+    guessTbbt(message[0].toLowerCase(), user);
   }
 };

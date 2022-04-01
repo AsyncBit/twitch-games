@@ -5,18 +5,24 @@
 
   <script src="./wtp/pokemon-info.js"></script>
   <script src="./wtp/wtp.js"></script>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./wtp/style.css" />
+
+  <script src="./tbbt/tbbt-quotes.js"></script>
+  <script src="./tbbt/tbbt.js"></script>
 </head>
 <body>
   <div id="video-holder"></div>
+  <div id="text-holder"></div>
+  <audio id="dynamic-audio" src="" preload="auto"></audio>
+
   <audio
     id="who-that-pokemon-audio"
-    src="./assets/who-that-pokemon.mp3"
+    src="./wtp/assets/who-that-pokemon.mp3"
     preload="auto"
   ></audio>
   <div id="ball" style="visibility: hidden">
     <video id="ballVid" muted="" playsinline="" onended="stopVid()">
-      <source src="./assets/ball2_VP8.webm" type="video/webm" />
+      <source src="./wtp/assets/ball2_VP8.webm" type="video/webm" />
       Your browser does not support the video tag.
     </video>
   </div>

@@ -10,7 +10,7 @@ let weightTxt = "Weight";
 let foundByTxt = "Found By";
 let wasRightTxt = "You Was Right";
 
-let isSolved = false;
+let isWtpSolved = false;
 let isRunning = false;
 let min = 1;
 let max = 151;
@@ -42,10 +42,10 @@ function getAmoutOfZeros(number) {
   }
 }
 
-function startGame() {
+function startWtp() {
   if (isRunning) winReset();
 
-  isSolved = false;
+  isWtpSolved = false;
   isRunning = true;
 
   if (rType === "original") {
@@ -77,7 +77,7 @@ function stopVid() {
 
 function showBlurredImage() {
   let blurredImage = document.createElement("img");
-  blurredImage.src = "./assets/pokemons/" + pokeNum + ".gif";
+  blurredImage.src = "./wtp/assets/pokemons/" + pokeNum + ".gif";
   blurredImage.className = "blurred";
   blurredImage.id = "pokemon-image";
 
@@ -89,7 +89,7 @@ function giveUp() {
   guess(currentName);
 }
 
-function skip() {
+function skipWtp() {
   winReset();
   startGame();
 }
@@ -100,7 +100,7 @@ function guess(x, n) {
   console.log(n);
   let guessedName = x.toLowerCase().replaceAll(/\s/g, "");
   if (guessedName == currentName) {
-    isSolved = true;
+    isWtpSolved = true;
     currentName = "";
     document.getElementById("pokemon-image").className = "";
     ComfyJS.Say("Congratz " + n + ". You guessed that it was " + guessedName);
@@ -110,8 +110,8 @@ function guess(x, n) {
   }
 }
 
-function winReset() {
-  isSolved = false;
+function resetWtp() {
+  isWtpSolved = false;
   isRunning = false;
   document.getElementById("pokemon-image").remove();
 }
