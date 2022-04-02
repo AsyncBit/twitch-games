@@ -43,7 +43,7 @@ function getAmoutOfZeros(number) {
 }
 
 function startWtp() {
-  if (isRunning) winReset();
+  if (isRunning) resetWtp();
 
   isWtpSolved = false;
   isRunning = true;
@@ -90,7 +90,7 @@ function giveUp() {
 }
 
 function skipWtp() {
-  winReset();
+  resetWtp();
   startGame();
 }
 
@@ -105,7 +105,7 @@ function guess(x, n) {
     document.getElementById("pokemon-image").className = "";
     ComfyJS.Say("Congratz " + n + ". You guessed that it was " + guessedName);
     setTimeout(function () {
-      winReset();
+      resetWtp();
     }, 5000);
   }
 }
@@ -113,6 +113,7 @@ function guess(x, n) {
 function resetWtp() {
   isWtpSolved = false;
   isRunning = false;
+  gameRunning = false;
   document.getElementById("pokemon-image").remove();
 }
 
@@ -128,7 +129,7 @@ if (autoStart) {
 
 function stopAuto() {
   auto = false;
-  winReset();
+  resetWtp();
 }
 
 function startAuto() {

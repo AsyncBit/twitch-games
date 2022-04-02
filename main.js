@@ -28,7 +28,9 @@ let gameRunning = false;
 
 const playGame = (game, callbackFunc, gameProps) => {
   console.log("Play game");
-  if (gameRunning) return;
+  if (gameRunning) {
+    return;
+  }
   gameRunning = true;
   switch (game) {
     case WTP:
