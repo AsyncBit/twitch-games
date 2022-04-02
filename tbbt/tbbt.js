@@ -3,8 +3,8 @@ let isTbbtSolved = true;
 
 let textColor = "black";
 
-if (urlParams.has("textColor")) {
-  textColor = urlParams.get("textColor");
+if (urlParams.has("color")) {
+  textColor = urlParams.get("color");
 } else {
   textColor = "black";
 }
@@ -25,10 +25,9 @@ const playTbbt = () => {
   currentQuote = tbbtQuotes[getRandomTbbtNumber()];
 
   document.getElementById("text-holder").innerHTML = currentQuote.quote;
-  document.getElementById("text-holder").style =
-    "color: " +
-    textColor +
-    "; font-family: 'Odibee Sans', cursive; font-size: 36px; max-width: 600px; word-break: break-word;";
+  document.getElementById(
+    "text-holder"
+  ).style = `color: ${textColor}; font-family: 'Odibee Sans', cursive; font-size: 36px; max-width: 600px; word-break: break-word;`;
 };
 
 const guessTbbt = (guessedChar, name) => {
