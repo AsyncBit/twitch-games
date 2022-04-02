@@ -21,6 +21,7 @@ const playTbbt = () => {
   isTbbtSolved = false;
   isRunning = true;
 
+  document.getElementById("text-holder").style.visibility = "visible";
   console.log("Now playing tbbt");
   currentQuote = tbbtQuotes[getRandomTbbtNumber()];
 
@@ -40,6 +41,7 @@ const guessTbbt = (guessedChar, name) => {
     isRunning = false;
 
     document.getElementById("text-holder").innerHTML = "";
+    document.getElementById("text-holder").style.visibility = "hidden";
 
     if (currentQuote.hasSound) {
       document.getElementById("dynamic-audio").src =
@@ -47,7 +49,7 @@ const guessTbbt = (guessedChar, name) => {
       document.getElementById("dynamic-audio").play();
     }
 
-    ComfyJS.Say("Congratz " + name + ". It was " + guessedName + "!!!");
+    ComfyJS.Say("Congratulations " + name + ". It was " + guessedName + "!!!");
     resetTbbt();
   }
 };
