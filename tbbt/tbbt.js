@@ -4,9 +4,9 @@ let isTbbtSolved = true;
 let textColor = "black";
 
 if (urlParams.has("textColor")) {
-  token = urlParams.get("textColor");
+  textColor = urlParams.get("textColor");
 } else {
-  token = "black";
+  textColor = "black";
 }
 
 function getRandomTbbtNumber() {
