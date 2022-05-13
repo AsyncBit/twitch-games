@@ -10,58 +10,58 @@ let tbbtQuotes = {
     answer: "sheldon",
     quote:
       "Oh, On The Contrary. I Found The Grinch To Be A Relatable, Engaging Character, And I Was Really With Him...",
-    hasSound: false,
+    hasSound: true,
   },
   "003": {
     id: "003",
     answer: "sheldon",
     quote:
       "Hard As This May Be To Believe, It’s Possible That I’m Not Boyfriend Material.",
-    hasSound: false,
+    hasSound: true,
   },
   "004": {
     id: "004",
     answer: "sheldon",
     quote: "Robert Oppenheimer Was Lonely.",
-    hasSound: false,
+    hasSound: true,
   },
   "005": {
     id: "005",
     answer: "sheldon",
     quote: "Well, That’s No Reason To Cry. One Cries Because One Is Sad.",
-    hasSound: false,
+    hasSound: true,
   },
   "006": {
     id: "006",
     answer: "leonard",
     quote: "I am the king of the nerds.",
-    hasSound: false,
+    hasSound: true,
   },
   "007": {
     id: "007",
     answer: "penny",
     quote: "I do wanna fling my poop at her.",
-    hasSound: false,
+    hasSound: true,
   },
   "008": {
     id: "008",
     answer: "amy",
     quote:
       "As my mom used to say, ‘When you’re doing a puzzle, it’s like you’ve got a thousand friends.’ She was full of fun lies like that.",
-    hasSound: false,
+    hasSound: true,
   },
   "009": {
     id: "009",
     answer: "bernadette",
     quote:
       "You better find my husband’s mother, ’cause one way or another we’re walking out of this airport with a dead woman.",
-    hasSound: false,
+    hasSound: true,
   },
   "010": {
     id: "010",
     answer: "penny",
     quote: "What up, Shel-Bot?",
-    hasSound: false,
+    hasSound: true,
   },
   "011": {
     id: "011",

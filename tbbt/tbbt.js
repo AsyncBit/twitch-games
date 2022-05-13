@@ -10,7 +10,7 @@ if (urlParams.has("color")) {
 }
 
 function getRandomTbbtNumber() {
-  let randNumber = Math.floor(Math.random() * 11) + 1;
+  let randNumber = Math.floor(Math.random() * 20) + 1;
   var amountOfZeros = getAmoutOfZeros(randNumber);
   return amountOfZeros + randNumber;
 }
@@ -28,7 +28,7 @@ const playTbbt = () => {
   document.getElementById("text-holder").innerHTML = currentQuote.quote;
   document.getElementById(
     "text-holder"
-  ).style = `color: ${textColor}; font-family: 'Odibee Sans', cursive; font-size: 36px; max-width: 600px; word-break: break-word;`;
+  ).style = `color: ${textColor}; font-family: 'Odibee Sans', cursive; font-size: 42px; max-width: 600px; word-break: break-word;`;
 };
 
 const guessTbbt = (guessedChar, name) => {
