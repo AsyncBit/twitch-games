@@ -35,6 +35,17 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   ) {
     resetGame(TBBT, resetTbbt);
   }
+
+  //RPSLS
+  if (command === "rpsls") {
+    let p2Name;
+    if (message && message.length > 0) {
+      p2Name = message.split(" ")[0];
+    } else {
+      p2Name = user;
+    }
+    playRPSLS(user, p2Name);
+  }
 };
 
 ComfyJS.onChat = (user, message, flags, self, extra) => {
