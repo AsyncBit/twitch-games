@@ -26,8 +26,8 @@ let tShow = true;
 let pokeNum = 0;
 let currentName = "";
 
-function getRandomNumber() {
-  let randNumber = Math.floor(Math.random() * 151) + 1;
+function getRandomNumber(max) {
+  let randNumber = Math.floor(Math.random() * max) + 1;
   var amountOfZeros = getAmoutOfZeros(randNumber);
   return amountOfZeros + randNumber;
 }
@@ -42,7 +42,7 @@ function getAmoutOfZeros(number) {
   }
 }
 
-function startWtp() {
+function startWtp(command) {
   if (isRunning) resetWtp();
 
   isWtpSolved = false;
@@ -56,7 +56,12 @@ function startWtp() {
     ext = "gif";
   }
 
-  pokeNum = getRandomNumber();
+  if (command == "wtp") {
+    pokeNum = getRandomNumber(151);
+  }
+  if (command == "wtp2") {
+    pokeNum = getRandomNumber(252);
+  }
 
   currentName = pokemonList[pokeNum].name;
   console.log(currentName);
