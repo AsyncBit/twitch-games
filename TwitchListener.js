@@ -1,6 +1,7 @@
 let currentGame = null;
 
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
+  console.log("Command: " + command);
   // WTP
   if (
     (flags.broadcaster && command === "wtp") ||

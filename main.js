@@ -5,6 +5,7 @@ const urlParams = new URLSearchParams(queryString);
 
 if (urlParams.has("channel")) {
   channel = urlParams.get("channel");
+  console.log("Configured channel variable");
 } else {
   channel = "";
 }
