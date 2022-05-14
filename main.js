@@ -13,6 +13,9 @@ if (urlParams.has("channel")) {
 if (urlParams.has("token")) {
   ComfyJS.Init(channel, urlParams.get("token"));
   console.log("Channel Send");
+} else {
+  ComfyJS.Init(channel);
+  console.log("Channel Not Send");
 }
 
 let gameRunning = false;
