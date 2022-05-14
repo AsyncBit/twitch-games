@@ -30,7 +30,7 @@ const playGame = (game, callbackFunc, gameProps) => {
     case WTP:
       console.log("Play WTP");
       currentGame = WTP;
-      callbackFunc();
+      callbackFunc(gameProps);
       break;
     case TBBT:
       console.log("Play TBBT");
