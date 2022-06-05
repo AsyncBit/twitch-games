@@ -21,7 +21,7 @@ const wordlist = [
   "wattson",
   "wraith",
   "frodo",
-  "samvis",
+  "samvise",
   "aragorn",
   "gollum",
   "legolas",
