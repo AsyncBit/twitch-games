@@ -30,7 +30,7 @@ function playScramble() {
 
 function guessScramble(guess, name) {
   if (currentString == guess) {
-    ComfyJS.Say(`Good job ${name}! The shuffeled word was ${currentString}`);
+    ComfyJS.Say(`Good job ${name}! The shuffled word was ${currentString}`);
     gameRunning = false;
     isScrambleSolved = true;
   }
