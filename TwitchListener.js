@@ -52,6 +52,17 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     }
     playRPSLS(user, p2Name);
   }
+
+  //scramble
+  if (command === "scramble") {
+    playGame(SCRAMBLE, playScramble);
+  }
+  if (
+    (flags.broadcaster && command === "resetscramble") ||
+    (flags.mod && command === "resetscramble")
+  ) {
+    resetScramble();
+  }
 };
 
 ComfyJS.onChat = (user, message, flags, self, extra) => {
@@ -85,5 +96,14 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
     message = message.split(" ");
 
     guessTbbt(message[0].toLowerCase(), user);
+  }
+
+  // Scramble
+  if (!isScrambleSolved && currentGame == SCRAMBLE) {
+    message = message.replace("?", "");
+    message = message.replace("@", "");
+    message = message.split(" ");
+
+    guessScramble(message[0].toLowerCase(), user);
   }
 };

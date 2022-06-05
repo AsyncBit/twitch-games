@@ -37,6 +37,11 @@ const playGame = (game, callbackFunc, gameProps) => {
       currentGame = TBBT;
       callbackFunc();
       break;
+    case SCRAMBLE:
+      console.log("Play SCARMBLE");
+      currentGame = SCRAMBLE;
+      callbackFunc();
+      break;
     default:
       return;
   }
@@ -53,3 +58,4 @@ const skipGame = (game, callbackFunction) => {
 
 const WTP = Symbol("wtp");
 const TBBT = Symbol("tbbt");
+const SCRAMBLE = Symbol("scramble");
