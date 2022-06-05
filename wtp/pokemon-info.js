@@ -1,7 +1,7 @@
 let pokemonList = {
   "001": {
     name: "bulbasaur",
-    pokedex: "This is Bulbasaur!",
+    pokedex: null,
   },
   "002": {
     name: "ivysaur",
