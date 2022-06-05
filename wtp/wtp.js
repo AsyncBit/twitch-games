@@ -25,6 +25,7 @@ let tShow = true;
 // Mine
 let pokeNum = 0;
 let currentName = "";
+let currentPokemon = {};
 
 function getRandomNumber(max) {
   let randNumber = Math.floor(Math.random() * max) + 1;
@@ -63,7 +64,8 @@ function startWtp(command) {
     pokeNum = getRandomNumber(252);
   }
 
-  currentName = pokemonList[pokeNum].name;
+  currentName = pokemonList[pokeNum].name.toLowerCase().replaceAll(/\s/g, "");
+  currentPokemon = pokemonList[pokeNum];
   console.log(currentName);
 
   document.getElementById("ball").style.visibility = "visible";
@@ -101,17 +103,26 @@ function skipWtp() {
 
 // message, user
 function guess(x, n) {
+  // x = guessedName
+  // n = usename of user that guessed
   console.log(x);
   console.log(n);
+  console.log("currentName");
+  console.log(currentName);
   let guessedName = x.toLowerCase().replaceAll(/\s/g, "");
+  console.log("guessedName");
+  console.log(guessedName);
   if (guessedName == currentName) {
     isWtpSolved = true;
     currentName = "";
     document.getElementById("pokemon-image").className = "";
-    ComfyJS.Say("Congratz " + n + ". You guessed that it was " + guessedName);
+    ComfyJS.Say("Good job " + n + ". You guessed that it was " + guessedName);
+    if (currentPokemon.pokedex != null) {
+      ComfyJS.Say("Pokédex: " + currentPokemon.pokedex);
+    }
     setTimeout(function () {
       resetWtp();
-    }, 5000);
+    }, 3000);
   }
 }
 
