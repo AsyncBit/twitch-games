@@ -58,7 +58,7 @@ const skipGame = (game, callbackFunction) => {
 
 const hypeItUp = () => {
   if (channel.toLocaleLowerCase() == "asyncbit") {
-    ComfyJS.say(
+    ComfyJS.Say(
       "asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance "
     );
   }
