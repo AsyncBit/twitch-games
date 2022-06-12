@@ -63,6 +63,11 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   ) {
     resetScramble();
   }
+
+  // vibe
+  if (command === "vibe" || command === "hype") {
+    hypeItUp();
+  }
 };
 
 ComfyJS.onChat = (user, message, flags, self, extra) => {

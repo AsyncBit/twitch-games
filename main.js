@@ -56,6 +56,14 @@ const skipGame = (game, callbackFunction) => {
   callbackFunction();
 };
 
+const hypeItUp = () => {
+  if (channel.toLocaleLowerCase() == "asyncbit") {
+    ComfyJS.say(
+      "asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance asyncbNorpar asyncbBongo asyncbDance "
+    );
+  }
+};
+
 const WTP = Symbol("wtp");
 const TBBT = Symbol("tbbt");
 const SCRAMBLE = Symbol("scramble");
