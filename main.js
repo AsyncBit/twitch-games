@@ -59,7 +59,7 @@ const skipGame = (game, callbackFunction) => {
 const hypeItUp = () => {
   if (channel.toLocaleLowerCase() == "asyncbit") {
     ComfyJS.Say(
-      "asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbSHype asyncbDance "
+      "asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar"
     );
   }
 };
