@@ -1,4 +1,5 @@
 let channel = "";
+let wtpCorrectWebhook = "";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -8,6 +9,12 @@ if (urlParams.has("channel")) {
   console.log("Configured channel variable");
 } else {
   channel = "";
+}
+
+if (urlParams.has("wtpwebhook")) {
+  wtpCorrectWebhook = urlParams.get("wtpwebhook");
+} else {
+  wtpCorrectWebhook = null;
 }
 
 if (urlParams.has("token")) {

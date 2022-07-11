@@ -105,7 +105,7 @@ function skipWtp() {
 function guess(x, n) {
   // x = guessedName
   // n = usename of user that guessed
-  console.log(x);
+  https: console.log(x);
   console.log(n);
   console.log("currentName");
   console.log(currentName);
@@ -119,6 +119,17 @@ function guess(x, n) {
     ComfyJS.Say("Good job " + n + ". You guessed that it was " + guessedName);
     if (currentPokemon.pokedex != null) {
       ComfyJS.Say("Pokédex: " + currentPokemon.pokedex);
+    }
+    if (wtpCorrectWebhook != null) {
+      fetch(wtpCorrectWebhook, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: n,
+        }),
+      });
     }
     setTimeout(function () {
       resetWtp();
