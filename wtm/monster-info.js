@@ -1,4 +1,4 @@
-let mosnterList = {
+let monsterList = {
   "001": {
     name: "banbaro",
   },

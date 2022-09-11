@@ -39,14 +39,14 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     (flags.broadcaster && command === "wtm") ||
     (flags.mod && command === "wtm")
   ) {
-    playGame(WTM, startWtp, "wtm");
+    playGame(WTM, startWtm, "wtm");
   }
 
   if (
-    (flags.broadcaster && command === "resetwtp") ||
-    (flags.mod && command === "resetwtp")
+    (flags.broadcaster && command === "resetwtm") ||
+    (flags.mod && command === "resetwtm")
   ) {
-    resetGame(WTM, resetWtp);
+    resetGame(WTM, resetWtm);
   }
 
   // TBBT

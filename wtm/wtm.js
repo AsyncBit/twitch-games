@@ -1,8 +1,5 @@
-let mute = false;
 let auto = true;
 let per = "All";
-let language = "en";
-let botuser = "";
 let pokemon;
 let pokeDex = "true";
 let heightTxt = "Height";
@@ -58,27 +55,22 @@ function startWtm(command) {
     ext = "gif";
   }
 
-  if (command == "wtp") {
+  if (command == "wtm") {
     // Change number to amount of possible monsters
     monsterNum = getRandomNumber(3);
   }
 
-  currentName = mosnterList[monsterNum].name
+  currentName = monsterList[monsterNum].name
     .toLowerCase()
     .replaceAll(/\s/g, "");
-  currentPokemon = mosnterList[monsterNum];
+  currentPokemon = monsterList[monsterNum];
   console.log(currentName);
-}
-
-function stopVid() {
-  document.getElementById("ball").style.visibility = "hidden";
   showBlurredImage();
-  console.log("HIDE");
 }
 
 function showBlurredImage() {
   let blurredImage = document.createElement("img");
-  blurredImage.src = "./wtm/assets/" + pokeNum + ".png";
+  blurredImage.src = "./wtm/assets/" + monsterNum + ".png";
   blurredImage.className = "blurred";
   blurredImage.id = "pokemon-image";
 
@@ -97,9 +89,6 @@ function skipWtm() {
 
 // message, user
 function guessWtm(x, n) {
-  // x = guessedName
-  // n = usename of user that guessed
-  https: console.log(x);
   console.log(n);
   console.log("currentName");
   console.log(currentName);
@@ -136,7 +125,7 @@ function guessWtm(x, n) {
 function resetWtm() {
   if (autoWtp) {
     document.getElementById("pokemon-image").remove();
-    startWtp("wtp");
+    startWtm("wtm");
   } else {
     isWtmSolved = false;
     isRunning = false;
