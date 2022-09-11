@@ -78,7 +78,7 @@ function stopVid() {
 
 function showBlurredImage() {
   let blurredImage = document.createElement("img");
-  blurredImage.src = "./wtp/assets/pokemons/" + pokeNum + ".gif";
+  blurredImage.src = "./wtm/assets/" + pokeNum + ".png";
   blurredImage.className = "blurred";
   blurredImage.id = "pokemon-image";
 
