@@ -10,6 +10,12 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     playGame(WTP, startWtp, "wtp");
   }
   if (
+    (flags.broadcaster && command === "wtpauto") ||
+    (flags.mod && command === "wtpauto")
+  ) {
+    playGame(WTP, startWtp, "wtpauto");
+  }
+  if (
     (flags.broadcaster && command === "wtp2") ||
     (flags.mod && command === "wtp2")
   ) {
@@ -26,6 +32,21 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     (flags.mod && command === "skipwtp")
   ) {
     skipGame(WTP, skipWtp);
+  }
+
+  // WTM
+  if (
+    (flags.broadcaster && command === "wtm") ||
+    (flags.mod && command === "wtm")
+  ) {
+    playGame(WTM, startWtp, "wtm");
+  }
+
+  if (
+    (flags.broadcaster && command === "resetwtp") ||
+    (flags.mod && command === "resetwtp")
+  ) {
+    resetGame(WTM, resetWtp);
   }
 
   // TBBT
@@ -90,6 +111,28 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
     } else if (per === "Vip/Subs") {
       if (flags.vip || flags.subscriber || flags.mod || flags.broadcaster) {
         guess(message[0].toLowerCase(), user);
+      }
+    }
+  }
+
+  if (!isWtmSolved && currentGame == WTM) {
+    message = message.replace("?", "");
+    message = message.replace("@", "");
+    message = message.split(" ");
+
+    if (per === "All") {
+      guessWtm(message[0].toLowerCase(), user);
+    } else if (per === "Subs") {
+      if (flags.subscriber || flags.mod || flags.broadcaster) {
+        guessWtm(message[0].toLowerCase(), user);
+      }
+    } else if (per === "Vips" || flags.mod || flags.broadcaster) {
+      if (flags.vip) {
+        guessWtm(message[0].toLowerCase(), user);
+      }
+    } else if (per === "Vip/Subs") {
+      if (flags.vip || flags.subscriber || flags.mod || flags.broadcaster) {
+        guessWtm(message[0].toLowerCase(), user);
       }
     }
   }

@@ -11,7 +11,7 @@ let foundByTxt = "Found By";
 let wasRightTxt = "You Was Right";
 
 let autoWtp = false;
-let isWtpSolved = false;
+let isWtmSolved = false;
 let isRunning = false;
 let min = 1;
 let max = 151;
@@ -24,7 +24,7 @@ let pokemonID;
 let tShow = true;
 
 // Mine
-let pokeNum = 0;
+let monsterNum = 0;
 let currentName = "";
 let currentPokemon = {};
 
@@ -44,8 +44,8 @@ function getAmoutOfZeros(number) {
   }
 }
 
-function startWtp(command) {
-  if (isRunning) resetWtp();
+function startWtm(command) {
+  if (isRunning) resetWtm();
 
   isWtpSolved = false;
   isRunning = true;
@@ -59,22 +59,15 @@ function startWtp(command) {
   }
 
   if (command == "wtp") {
-    pokeNum = getRandomNumber(151);
-  }
-  if (command == "wtp2") {
-    pokeNum = getRandomNumber(252);
+    // Change number to amount of possible monsters
+    monsterNum = getRandomNumber(3);
   }
 
-  currentName = pokemonList[pokeNum].name.toLowerCase().replaceAll(/\s/g, "");
-  currentPokemon = pokemonList[pokeNum];
+  currentName = mosnterList[monsterNum].name
+    .toLowerCase()
+    .replaceAll(/\s/g, "");
+  currentPokemon = mosnterList[monsterNum];
   console.log(currentName);
-
-  document.getElementById("ball").style.visibility = "visible";
-
-  document.getElementById("ballVid").play();
-  if (!mute) {
-    document.getElementById("who-that-pokemon-audio").play();
-  }
 }
 
 function stopVid() {
@@ -94,16 +87,16 @@ function showBlurredImage() {
 }
 
 function giveUp() {
-  guess(currentName);
+  guessWtm(currentName);
 }
 
-function skipWtp() {
+function skipWtm() {
   resetWtp();
   startGame();
 }
 
 // message, user
-function guess(x, n) {
+function guessWtm(x, n) {
   // x = guessedName
   // n = usename of user that guessed
   https: console.log(x);
@@ -114,14 +107,16 @@ function guess(x, n) {
   console.log("guessedName");
   console.log(guessedName);
   if (guessedName == currentName) {
-    isWtpSolved = true;
+    isWtmSolved = true;
     currentName = "";
     document.getElementById("pokemon-image").className = "";
-    ComfyJS.Say("Good job " + n + ". You guessed that it was " + guessedName);
-    if (currentPokemon.pokedex != null) {
-      ComfyJS.Say("Pokédex: " + currentPokemon.pokedex);
-    }
-    if (wtpCorrectWebhook != null) {
+    ComfyJS.Say(
+      "Good job " +
+        n +
+        ". You guessed the correct monster, it was " +
+        guessedName
+    );
+    /* if (wtpCorrectWebhook != null) {
       fetch(wtpCorrectWebhook, {
         method: "POST",
         headers: {
@@ -131,19 +126,19 @@ function guess(x, n) {
           username: n,
         }),
       });
-    }
+    } */
     setTimeout(function () {
-      resetWtp();
+      resetWtm();
     }, 3000);
   }
 }
 
-function resetWtp() {
+function resetWtm() {
   if (autoWtp) {
     document.getElementById("pokemon-image").remove();
     startWtp("wtp");
   } else {
-    isWtpSolved = false;
+    isWtmSolved = false;
     isRunning = false;
     gameRunning = false;
     document.getElementById("pokemon-image").remove();
