@@ -14,7 +14,7 @@ class User {
   }
 }
 
-const timer = 30000;
+const timer = 60000;
 let royalActive = false;
 
 let activePokemons = [];
