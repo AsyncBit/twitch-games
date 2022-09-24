@@ -79,6 +79,15 @@ const getZeros = (number) => {
 
 function startWtpRoyal() {
   royalActive = true;
+  ComfyJS.Say(
+    "THE ROYALE HAS STARTED!! There will be a grid of pokemons on screen soon, try to guess as many as you can within 30 seconds!"
+  );
+  setTimeout(function () {
+    startWtpRoyalGame();
+  }, 5000);
+}
+
+function startWtpRoyalGame() {
   activePokemons = [];
   correctGuesses = [];
   grid = new Grid();
