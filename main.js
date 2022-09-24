@@ -1,5 +1,6 @@
 let channel = "";
 let wtpCorrectWebhook = "";
+let fullscreen = false;
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -9,6 +10,13 @@ if (urlParams.has("channel")) {
   console.log("Configured channel variable");
 } else {
   channel = "";
+}
+
+if (urlParams.has("fullscreen")) {
+  fullscreen = true;
+  console.log("Configured fullscreen variable");
+} else {
+  fullscreen = false;
 }
 
 if (urlParams.has("wtpwebhook")) {
