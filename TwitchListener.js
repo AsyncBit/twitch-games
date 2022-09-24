@@ -51,16 +51,16 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 
   // WTPROYAL
   if (
-    (flags.broadcaster && command === "wtproyal") ||
-    (flags.mod && command === "wtproyal")
+    (flags.broadcaster && command === "wtproyale") ||
+    (flags.mod && command === "wtproyale")
   ) {
-    playGame(WTPROYAL, startWtpRoyal, "wtproyal");
+    playGame(WTPROYAL, startWtpRoyal, "wtproyale");
   }
   if (
-    (flags.broadcaster && command === "resetwtproyal") ||
-    (flags.mod && command === "resetwtproyal")
+    (flags.broadcaster && command === "resetwtproyale") ||
+    (flags.mod && command === "resetwtproyale")
   ) {
-    resetGame(WTPROYAL, resetWtpRoyal, "resetwtproyal");
+    resetGame(WTPROYAL, resetWtpRoyal, "resetwtproyale");
   }
 
   // TBBT

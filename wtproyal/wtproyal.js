@@ -120,7 +120,7 @@ const resetWtpRoyal = () => {
 function stopWtpRoyal() {
   if (!royalActive) return;
   royalActive = false;
-  ComfyJS.Say("THE ROYAL IS OVER");
+  ComfyJS.Say("THE ROYALE IS OVER");
 
   let result = [];
   correctGuesses.map((name) => {
@@ -156,7 +156,9 @@ function stopWtpRoyal() {
         child.className = "pokemonRoyalCell";
       }
     }
-    ComfyJS.Say(`Thank you for participating in the royal! The winner is.....`);
+    ComfyJS.Say(
+      `Thank you for participating in the royale! The winner is.....`
+    );
     setTimeout(function () {
       ComfyJS.Say(
         `${result[0].name} with ${result[0].amount} correct guesses!`
