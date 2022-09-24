@@ -49,6 +49,20 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     resetGame(WTM, resetWtm);
   }
 
+  // WTPROYAL
+  if (
+    (flags.broadcaster && command === "wtproyal") ||
+    (flags.mod && command === "wtproyal")
+  ) {
+    playGame(WTPROYAL, startWtpRoyal, "wtproyal");
+  }
+  if (
+    (flags.broadcaster && command === "resetwtproyal") ||
+    (flags.mod && command === "resetwtproyal")
+  ) {
+    resetGame(WTPROYAL, resetWtpRoyal, "resetwtproyal");
+  }
+
   // TBBT
   if (
     (flags.broadcaster && command === "tbbt") ||
@@ -115,7 +129,7 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
     }
   }
 
-  if (!isWtmSolved && currentGame == WTM) {
+  /* if (!isWtmSolved && currentGame == WTM) {
     message = message.replace("?", "");
     message = message.replace("@", "");
     message = message.split(" ");
@@ -135,10 +149,18 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
         guessWtm(message[0].toLowerCase(), user);
       }
     }
+  } */
+
+  if (royalActive && currentGame == WTPROYAL) {
+    message = message.replace("?", "");
+    message = message.replace("@", "");
+    message = message.split(" ");
+
+    guessRoyal(message[0].toLowerCase(), user);
   }
 
-  // TBBT
   if (!isTbbtSolved && currentGame == TBBT) {
+    // TBBT
     message = message.replace("?", "");
     message = message.replace("@", "");
     message = message.split(" ");

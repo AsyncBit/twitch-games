@@ -3,8 +3,11 @@ let isTbbtSolved = true;
 
 let textColor = "black";
 
-if (urlParams.has("color")) {
-  textColor = urlParams.get("color");
+const queryStringTbbt = window.location.search;
+const urlParamsTbbt = new URLSearchParams(queryStringTbbt);
+
+if (urlParamsTbbt.has("color")) {
+  textColor = urlParamsTbbt.get("color");
 } else {
   textColor = "black";
 }

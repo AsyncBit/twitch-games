@@ -31,3 +31,14 @@
 .blurred {
   filter: contrast(0) sepia(0) hue-rotate(0) saturate(2000%) brightness(50);
 }
+
+#pokemonRoyalContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemonRoyalCell {
+  margin: 10px 75px 10px 75px;
+  width: 200px;
+  height: 200px;
+}

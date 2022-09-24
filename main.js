@@ -39,6 +39,11 @@ const playGame = (game, callbackFunc, gameProps) => {
       currentGame = WTP;
       callbackFunc(gameProps);
       break;
+    case WTPROYAL:
+      console.log("Play WTP");
+      currentGame = WTPROYAL;
+      callbackFunc(gameProps);
+      break;
     case WTM:
       console.log("Play WTM");
       currentGame = WTM;
@@ -77,6 +82,7 @@ const hypeItUp = () => {
 };
 
 const WTP = Symbol("wtp");
+const WTPROYAL = Symbol("wtproyal");
 const WTM = Symbol("wtm");
 const TBBT = Symbol("tbbt");
 const SCRAMBLE = Symbol("scramble");
