@@ -99,6 +99,8 @@ function startWtpRoyalGame() {
     }
   }
 
+  document.getElementById("body").classList = "blackout";
+
   for (let x = 0; x < 5; x++) {
     for (let y = 0; y < 4; y++) {
       console.log(`Pokemon at ${x},${y} is ${grid.rows[x].cells[y].data.name}`);
@@ -123,6 +125,7 @@ function startWtpRoyalGame() {
 const resetWtpRoyal = () => {
   royalActive = false;
   document.getElementById("pokemonRoyalContainer").innerHTML = "";
+  document.getElementById("body").classList = "";
   gameRunning = false;
 };
 
@@ -173,13 +176,11 @@ function stopWtpRoyal() {
         `${result[0].name} with ${result[0].amount} correct guesses!`
       );
       setTimeout(function () {
-        parent.innerHTML = "";
-        gameRunning = false;
+        resetWtpRoyal();
       }, 2000);
     }, 2000);
   } else {
-    document.getElementById("pokemonRoyalContainer").innerHTML = "";
-    gameRunning = false;
+    resetWtpRoyal();
   }
 }
 
