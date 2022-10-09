@@ -175,6 +175,21 @@ function stopWtpRoyal() {
       ComfyJS.Say(
         `${result[0].name} with ${result[0].amount} correct guesses!`
       );
+      if (wtpCorrectWebhook != null) {
+        result.forEach((userResult) => {
+          fetch(wtpCorrectWebhook, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username: userResult.name,
+              iswtproyale: true,
+              score: userResult.amount,
+            }),
+          });
+        });
+      }
       setTimeout(function () {
         resetWtpRoyal();
       }, 2000);

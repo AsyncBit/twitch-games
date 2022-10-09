@@ -129,6 +129,7 @@ function guess(x, n) {
         },
         body: JSON.stringify({
           username: n,
+          iswtproyale: false,
         }),
       });
     }
