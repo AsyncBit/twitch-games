@@ -43,7 +43,7 @@ const generatePokemon = (x, y) => {
 const guessRoyal = (guessedName, username) => {
   guessedName = guessedName.toLowerCase().replaceAll(/\s/g, "");
 
-  if (activePokemons.map((i) => i.name === guessedName).length >= 1) {
+  if (activePokemons.filter((i) => i.name === guessedName).length >= 1) {
     // Give user point
     correctGuesses.push(username.toLowerCase());
 
@@ -172,9 +172,22 @@ function stopWtpRoyal() {
       `Thank you for participating in the royale! The winner is.....`
     );
     setTimeout(function () {
-      ComfyJS.Say(
-        `${result[0].name} with ${result[0].amount} correct guesses!`
-      );
+      const winnerAmount = result[0].amount;
+      const drawList = result.filter((i) => i.amount === winnerAmount);
+
+      if (drawList.length > 1) {
+        ComfyJS.Say(
+          `A draw between ${drawList
+            .map((i) => i.name)
+            .join(", ")} with ${winnerAmount} correct guesses!`
+        );
+      } else {
+        ComfyJS.Say(
+          `${drawList
+            .map((i) => i.name)
+            .join(", ")} with ${winnerAmount} correct guesses!`
+        );
+      }
       if (wtpCorrectWebhook != null) {
         result.forEach((userResult) => {
           fetch(wtpCorrectWebhook, {
