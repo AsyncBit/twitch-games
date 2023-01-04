@@ -211,6 +211,7 @@ function stopWtpRoyal() {
               username: userResult.name,
               iswtproyale: true,
               score: userResult.amount,
+              isHighscore: false,
             }),
           });
         });
