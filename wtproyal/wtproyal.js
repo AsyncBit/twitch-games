@@ -196,9 +196,9 @@ function stopWtpRoyal() {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              username: drawList.map((i) => i.name).join("|"),
+              username: userResult.name,
               iswtproyale: true,
-              score: winnerAmount,
+              score: userResult.amount,
             }),
           });
         });
