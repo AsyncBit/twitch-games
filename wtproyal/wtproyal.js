@@ -189,6 +189,18 @@ function stopWtpRoyal() {
         );
       }
       if (wtpCorrectWebhook != null) {
+        fetch(wtpCorrectWebhook, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: drawList.map((i) => i.name).join("|"),
+            iswtproyale: true,
+            score: winnerAmount,
+            isHighscore: true,
+          }),
+        });
         result.forEach((userResult) => {
           fetch(wtpCorrectWebhook, {
             method: "POST",
