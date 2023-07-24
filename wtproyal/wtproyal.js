@@ -195,7 +195,7 @@ function stopWtpRoyal() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username: drawList.map((i) => i.name).join("|"),
+            username: drawList[0],
             iswtproyale: true,
             score: winnerAmount,
             isHighscore: true,
