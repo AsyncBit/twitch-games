@@ -84,8 +84,21 @@ function stopVid() {
 }
 
 function showBlurredImage() {
+  let dittoNumber = 0;
+  if(pokeNum == 132) {
+    if (command == "wtp") {
+      dittoNumber = getRandomNumber(151);
+    }
+    if (command == "wtp2") {
+      dittoNumber = getRandomNumber(252);
+    }
+  }
   let blurredImage = document.createElement("img");
-  blurredImage.src = "./wtp/assets/pokemons/" + pokeNum + ".gif";
+  if(pokeNum == 132) {
+    blurredImage.src = "./wtp/assets/pokemons/" + dittoNumber + ".gif";
+  } else {
+    blurredImage.src = "./wtp/assets/pokemons/" + pokeNum + ".gif";
+  }
   blurredImage.className = "blurred";
   blurredImage.id = "pokemon-image";
 
