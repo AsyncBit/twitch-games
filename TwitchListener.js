@@ -91,7 +91,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   }
 
   //scramble
-  if (command === "scramble") {
+  if (command === "wordmix") {
     playGame(SCRAMBLE, playScramble);
   }
   if (
@@ -99,11 +99,6 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     (flags.mod && command === "resetscramble")
   ) {
     resetScramble();
-  }
-
-  // vibe
-  if (command === "vibe" || command === "hype") {
-    hypeItUp();
   }
 };
 

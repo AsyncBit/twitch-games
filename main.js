@@ -81,14 +81,6 @@ const skipGame = (game, callbackFunction) => {
   callbackFunction();
 };
 
-const hypeItUp = () => {
-  if (channel.toLocaleLowerCase() == "asyncbit") {
-    ComfyJS.Say(
-      "asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar asyncbSHype asyncbDance asyncbNorpar"
-    );
-  }
-};
-
 const WTP = Symbol("wtp");
 const WTPROYAL = Symbol("wtproyal");
 const WTM = Symbol("wtm");
