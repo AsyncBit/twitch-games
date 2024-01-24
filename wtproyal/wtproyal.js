@@ -20,6 +20,7 @@ let royalActive = false;
 let activePokemons = [];
 let correctGuesses = [];
 let grid = new Grid();
+let totalCorretGuesses = 0;
 
 const generatePokemon = (x, y) => {
   let newPokenumber = null;
@@ -46,6 +47,7 @@ const guessRoyal = (guessedName, username) => {
   if (activePokemons.filter((i) => i.name === guessedName).length >= 1) {
     // Give user point
     correctGuesses.push(username.toLowerCase());
+    totalCorretGuesses += 1;
 
     const guessedPokemon = activePokemons.filter(
       (pokemon) => pokemon.name === guessedName
@@ -127,6 +129,7 @@ const resetWtpRoyal = () => {
   document.getElementById("pokemonRoyalContainer").innerHTML = "";
   document.getElementById("body").classList = "";
   gameRunning = false;
+  totalCorretGuesses = 0;
 };
 
 function stopWtpRoyal() {
@@ -169,7 +172,7 @@ function stopWtpRoyal() {
       }
     }
     ComfyJS.Say(
-      `Thank you for participating in the royale! The winner is.....`
+      `Thank you for participating in the royale! There with ${totalCorretGuesses} correct answers, the winner is.....`
     );
     setTimeout(function () {
       const winnerAmount = result[0].amount;
